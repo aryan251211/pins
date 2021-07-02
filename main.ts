@@ -9,7 +9,14 @@ input.onButtonPressed(Button.B, function () {
 })
 basic.forever(function () {
     if (pins.digitalReadPin(DigitalPin.P2) == 1) {
-        led.plot(2, 2)
+        basic.showLeds(`
+            # . . . #
+            . # . # .
+            . . # . .
+            . # . # .
+            # . . . #
+            `)
+        basic.clearScreen()
     } else {
         led.unplot(2, 2)
     }
